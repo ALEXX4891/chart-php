@@ -36,10 +36,10 @@ foreach ($rows as $row) {
   // Формируем массивы данных в зависимости от типа строки:
   if ($cells->item(2)->textContent == 'buy') {
     $parcArreyDate[] = $cells->item(1)->textContent;  // массив дат для оси X
-    $parcArreyBalance[] = $cells->item(10)->textContent + $cells->item(13)->textContent;
+    $parcArreyBalance[] = floatval(str_replace(' ', '', $cells->item(10)->textContent)) + floatval(str_replace(' ', '', $cells->item(13)->textContent));
   } elseif ($cells->item(2)->textContent == 'balance') {
     $parcArreyDate[] = $cells->item(1)->textContent; // массив дат для оси X
-    $parcArreyBalance[] = $cells->item(4)->textContent;
+    $parcArreyBalance[] = floatval(str_replace(' ', '', $cells->item(4)->textContent));
   }
 }
 
